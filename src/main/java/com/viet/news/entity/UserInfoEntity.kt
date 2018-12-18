@@ -5,7 +5,7 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 @Data
-@Entity
+//@Entity
 @Table(name = "user")
 class UserInfoEntity  {
     var id: String? = ""
