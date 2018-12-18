@@ -11,7 +11,5 @@ class ChannelService {
     @Autowired
     var channelRepository: ChannelRepository? = null
 
-    fun allList(): List<ChannelList> {
-        return channelRepository!!.findAll()
-    }
+    fun allList(): List<ChannelList>? = channelRepository?.findAll()
 }

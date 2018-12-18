@@ -18,7 +18,5 @@ class ChannelController {
 
     @GetMapping("/allList")
     @ResponseBody
-    fun allList(): List<ChannelList>? {
-        return channelService?.allList()
-    }
+    fun allList(): List<ChannelList>? = channelService?.allList()
 }
