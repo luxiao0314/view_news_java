@@ -10,14 +10,16 @@ import javax.persistence.Table
 
 @Data
 @Entity
-@Table(name = "person")
+@Table(name = "channel")
 class ChannelList {
 
     @Id
     @GeneratedValue
     var id: Long? = null
-
-    var name: String? = null
-
-    var address: String? = null
+    var channel_key: String? = null
+    var channel_name: String? = null
+    var sort: Boolean? = null
+    var deleted: Boolean = false
+    var can_delete: Boolean? = null
+    var default_channel: Boolean? = null
 }
