@@ -1,4 +1,4 @@
-package com.viet.news.pojo;
+package com.viet.news.entity;
  
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

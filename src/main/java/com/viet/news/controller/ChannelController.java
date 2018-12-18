@@ -1,7 +1,8 @@
 package com.viet.news.controller;
 
-import com.viet.news.dao.Dao;
-import com.viet.news.entity.Person;
+import com.viet.news.entity.ChannelList;
+import com.viet.news.repository.ChannelRepository;
+import com.viet.news.service.ChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class PersonController {
+@RequestMapping("/v1/channel")
+public class ChannelController {
 
     @Autowired
-    Dao dao;
+    ChannelService channelService;
 
-    @GetMapping("/find")
+    @GetMapping("/allList")
     @ResponseBody
-    public List<Person> findAll() {
-        return dao.findAll();
+    public List<ChannelList> allList() {
+        return channelService.allList();
     }
 }
