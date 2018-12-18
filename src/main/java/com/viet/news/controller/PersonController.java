@@ -1,10 +1,8 @@
-package com.springboot.controller;
+package com.viet.news.controller;
 
-import com.springboot.dao.Dao;
-import com.springboot.pojo.Person;
-import com.springboot.service.PersonService;
+import com.viet.news.dao.Dao;
+import com.viet.news.pojo.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

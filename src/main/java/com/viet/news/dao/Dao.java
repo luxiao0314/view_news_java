@@ -1,8 +1,6 @@
-package com.springboot.dao;
+package com.viet.news.dao;
  
-import java.util.List;
-
-import com.springboot.pojo.Person;
+import com.viet.news.pojo.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
  
 public interface Dao extends JpaRepository<Person, String>{

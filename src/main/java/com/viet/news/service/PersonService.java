@@ -1,7 +1,7 @@
-package com.springboot.service;
+package com.viet.news.service;
 
-import com.springboot.dao.Dao;
-import com.springboot.pojo.Person;
+import com.viet.news.dao.Dao;
+import com.viet.news.pojo.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

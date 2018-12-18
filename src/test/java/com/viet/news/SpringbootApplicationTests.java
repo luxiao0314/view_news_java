@@ -1,4 +1,4 @@
-package com.springboot;
+package com.viet.news;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

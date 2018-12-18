@@ -1,4 +1,4 @@
-package com.springboot.pojo;
+package com.viet.news.pojo;
  
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
