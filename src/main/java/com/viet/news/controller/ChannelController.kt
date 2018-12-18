@@ -18,6 +18,17 @@ class ChannelController {
     @Autowired
     var channelService: ChannelService? = null
 
+    @GetMapping("/list")
+    @ResponseBody
+    fun list(): ResponseContent<*>? {
+        return try {
+            ResponseContent.buildSuccess("success", channelService?.list())
+        } catch (e: Exception) {
+            logger.error("error", e)
+            ResponseContent.buildFail("出错啦\n" + e.message)
+        }
+    }
+
     @GetMapping("/allList")
     @ResponseBody
     fun allList(): ResponseContent<*>? {
