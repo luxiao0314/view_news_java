@@ -26,4 +26,26 @@ class UserController {
             ResponseContent.buildFail("出错啦\n" + e.message)
         }
     }
+
+    @GetMapping("/follow/{followUserId}")
+    @ResponseBody
+    fun follow(@PathVariable("followUserId") followUserId: String): ResponseContent<*>? {
+        return try {
+            ResponseContent.buildSuccess("success", userService?.follow(followUserId.toLong()))
+        } catch (e: Exception) {
+            logger.error("error", e)
+            ResponseContent.buildFail("出错啦\n" + e.message)
+        }
+    }
+
+    @GetMapping("/cancelFollow/{followUserId}")
+    @ResponseBody
+    fun cancelFollow(@PathVariable("followUserId") followUserId: String): ResponseContent<*>? {
+        return try {
+            ResponseContent.buildSuccess("success", userService?.cancelFollow(followUserId.toLong()))
+        } catch (e: Exception) {
+            logger.error("error", e)
+            ResponseContent.buildFail("出错啦\n" + e.message)
+        }
+    }
 }
