@@ -14,7 +14,7 @@ import javax.persistence.Table
 class ChannelList : BaseEntity() {
     var channel_key: String? = null
     var channel_name: String? = null
-    var sort: Boolean? = null
+    var sort: Int = 0
     var can_delete: Boolean? = null
     var default_channel: Boolean? = null
 }

@@ -5,10 +5,9 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 @Data
-//@Entity
+@Entity
 @Table(name = "user")
-class UserInfoEntity  {
-    var id: String? = ""
+class UserInfoEntity :BaseEntity() {
     var zone_code: Int = 0
     var phone_number: String? = ""
     var nick_name: String? = ""

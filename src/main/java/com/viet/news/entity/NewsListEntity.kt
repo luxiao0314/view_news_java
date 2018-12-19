@@ -5,9 +5,9 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 
-class NewsListEntity(var total_count: String?, var total_pages: String?, var list: List<NewsListBean>)
+class NewsListEntity(var total_count: Int?, var total_pages: Int?, var list: List<NewsListBean>?)
 
-data class NewsListBean(var content: ContentBean, var author: UserInfoEntity, var image_array: ArrayList<ImageEntity>)
+data class NewsListBean(var content: ContentBean?, var author: UserInfoEntity?, var image_array: ArrayList<ImageEntity>?)
 
 @Data
 @Entity
