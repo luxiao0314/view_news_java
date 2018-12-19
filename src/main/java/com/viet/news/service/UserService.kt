@@ -1,9 +1,11 @@
 package com.viet.news.service
 
+import com.viet.news.controller.ContentController
 import com.viet.news.entity.UserFollowEntity
 import com.viet.news.entity.UserInfoEntity
 import com.viet.news.repository.UserFollowRepository
 import com.viet.news.repository.UserRepository
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -27,6 +29,22 @@ class UserService {
 
     fun cancelFollow(follow_user_id: Long?) {
         userFollowRepository?.cancelFollow(follow_user_id)
+    }
+
+    fun followList(user_id: Long?): List<UserInfoEntity>? {
+        val list = arrayListOf<UserInfoEntity>()
+        userFollowRepository?.findFollowUserIdByUserId(user_id)?.forEach {
+            userRepository?.findUserById(it.followUserId)?.let { it1 -> list.add(it1) }
+        }
+        return list
+    }
+
+    fun fansList(user_id: Long?): List<UserInfoEntity>? {
+        val list = arrayListOf<UserInfoEntity>()
+        userFollowRepository?.findFollowUserIdByFollowUserId(user_id)?.forEach {
+            userRepository?.findUserById(it.followUserId)?.let { it1 -> list.add(it1) }
+        }
+        return list
     }
 
 }

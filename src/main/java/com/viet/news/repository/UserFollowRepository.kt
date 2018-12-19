@@ -1,6 +1,7 @@
 package com.viet.news.repository
 
 import com.viet.news.entity.UserFollowEntity
+import com.viet.news.entity.UserInfoEntity
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.transaction.annotation.Transactional
@@ -21,4 +22,8 @@ interface UserFollowRepository : BaseEntityRepository<UserFollowEntity> {
     @Transactional  //Caused by: javax.persistence.TransactionRequiredException: Executing an update/delete query  需要加上事务
     @Query(value = "update user_follow set deleted = 0 where follow_user_id = 12", nativeQuery = true)
     fun cancelFollow(id: Long?)
+
+    fun findFollowUserIdByUserId(userId:Long?):List<UserFollowEntity>
+
+    fun findFollowUserIdByFollowUserId(followUserId: Long?):List<UserFollowEntity>
 }

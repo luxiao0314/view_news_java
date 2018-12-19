@@ -25,7 +25,6 @@ class ContentController {
     var userService: UserService? = null
 
     @PostMapping("/list4Channel")
-    @ResponseBody
     fun getlist4Channel(@RequestBody listParams: ListParams): ResponseContent<*>? {
         return try {
             val content4Channel = contentService?.getContent4Channel(listParams.channel_id)
@@ -43,7 +42,6 @@ class ContentController {
     }
 
     @PostMapping("/list4user")
-    @ResponseBody
     fun list4user(@RequestBody listParams: ListParams): ResponseContent<*>? {
         return try {
             val list4user = contentService?.list4user(listParams.user_id)

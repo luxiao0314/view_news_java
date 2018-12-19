@@ -16,7 +16,6 @@ class ChannelController {
     var channelService: ChannelService? = null
 
     @PostMapping("/list")
-    @ResponseBody
     fun list(): ResponseContent<*>? {
         return try {
             ResponseContent.buildSuccess("success", channelService?.list())
@@ -27,7 +26,6 @@ class ChannelController {
     }
 
     @PostMapping("/allList")
-    @ResponseBody
     fun allList(): ResponseContent<*>? {
         return try {
             ResponseContent.buildSuccess("success", channelService?.allList())
