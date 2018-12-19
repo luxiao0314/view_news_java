@@ -15,7 +15,7 @@ class ContentService {
         return contentRepository?.findAll()
     }
 
-//    fun getUser4Channel(channelId:String?): List<NewsListBean>? {
-//        return contentRepository?.findAllByChannelId(channelId)
-//    }
+    fun list4user(id:String?): List<ContentBean>? {
+        return contentRepository?.findAll()
+    }
 }

@@ -6,10 +6,7 @@ import com.viet.news.repository.ChannelRepository
 import com.viet.news.service.ChannelService
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/v1/channel")
@@ -18,7 +15,7 @@ class ChannelController {
     @Autowired
     var channelService: ChannelService? = null
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     @ResponseBody
     fun list(): ResponseContent<*>? {
         return try {
@@ -29,7 +26,7 @@ class ChannelController {
         }
     }
 
-    @GetMapping("/allList")
+    @PostMapping("/allList")
     @ResponseBody
     fun allList(): ResponseContent<*>? {
         return try {

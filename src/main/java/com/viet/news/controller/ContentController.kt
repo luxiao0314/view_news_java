@@ -41,4 +41,22 @@ class ContentController {
             ResponseContent.buildFail("出错啦\n" + e.message)
         }
     }
+
+    @PostMapping("/list4user")
+    @ResponseBody
+    fun list4user(@RequestBody listParams: ListParams): ResponseContent<*>? {
+        return try {
+            val list4user = contentService?.list4user(listParams.user_id)
+            val newsListBean = arrayListOf<NewsListBean>()
+            list4user?.forEach {
+                val imgList = arrayListOf<ImageEntity>()
+                JSONArray.parseArray(it.content_image).forEach { imgList.add(ImageEntity((it as JSONObject).getString("cover"))) }
+                newsListBean.add(NewsListBean(it, userService?.getUserInfo(1), imgList))
+            }
+            ResponseContent.buildSuccess("success", NewsListEntity(list4user?.size, 20, newsListBean))
+        } catch (e: Exception) {
+            logger.error("error", e)
+            ResponseContent.buildFail("出错啦\n" + e.message)
+        }
+    }
 }
