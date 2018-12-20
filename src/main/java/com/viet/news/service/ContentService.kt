@@ -18,4 +18,8 @@ class ContentService {
     fun list4user(id:String?): List<ContentBean>? {
         return contentRepository?.findAll()
     }
+
+    fun list4follow(id:String?): List<ContentBean>? {
+        return contentRepository?.findAll()
+    }
 }
