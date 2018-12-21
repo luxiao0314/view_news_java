@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/v1/user")
-class UserController {
+class UserController : BaseController() {
 
     private val logger = LoggerFactory.getLogger(UserController::class.java)
 

@@ -10,6 +10,10 @@ spring:
       ddl-auto: update
     show-sql: true
 
+jwt:
+  sign_key: 781546576b45c9f2c8f41cb99d195d4e
+  access_token_expire_time: 21600
+
 spring.jackson.serialization.write-dates-as-timestamps: true
 
 # 默认的 8080 我们将它改成 9090

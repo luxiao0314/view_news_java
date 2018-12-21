@@ -5,7 +5,13 @@
 
 package com.viet.news.common;
 
+import com.viet.news.controller.UserController;
+import lombok.val;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ResponseContent<T> {
+    private static Logger logger = LoggerFactory.getLogger(ResponseContent.class);
     public static final int SUCCESS_CODE = 0;
     public static final int FAIL_CODE = 2;
     public static final int AUTH_FAIL_CODE = 1;
@@ -52,6 +58,7 @@ public class ResponseContent<T> {
     }
 
     public static ResponseContent buildFail(String message) {
+        logger.error("error", message);
         return new ResponseContent(2, message);
     }
 

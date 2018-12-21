@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/v1/channel")
-class ChannelController {
-    private val logger = LoggerFactory.getLogger(ChannelController::class.java)
+class ChannelController : BaseController() {
     @Autowired
     var channelService: ChannelService? = null
 
@@ -20,7 +19,6 @@ class ChannelController {
         return try {
             ResponseContent.buildSuccess("success", channelService?.list())
         } catch (e: Exception) {
-            logger.error("error", e)
             ResponseContent.buildFail("出错啦\n" + e.message)
         }
     }
@@ -30,7 +28,6 @@ class ChannelController {
         return try {
             ResponseContent.buildSuccess("success", channelService?.allList())
         } catch (e: Exception) {
-            logger.error("error", e)
             ResponseContent.buildFail("出错啦\n" + e.message)
         }
     }

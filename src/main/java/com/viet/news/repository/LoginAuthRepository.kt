@@ -1,9 +1,6 @@
 package com.viet.news.repository
 
-import com.viet.news.entity.ContentBean
 import com.viet.news.entity.LoginAuthResponse
-import com.viet.news.entity.LoginRegisterResponse
-import com.viet.news.entity.UserInfoEntity
 import org.springframework.data.jpa.repository.Query
 
 interface LoginAuthRepository : BaseEntityRepository<LoginAuthResponse> {

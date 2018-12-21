@@ -17,5 +17,8 @@ class LoginAuthResponse : BaseEntity() {
     @Column(name = "user_id")
     var userId: String? = ""
 
-    var oatuh_token: String? = ""
+    @JSONField(name = "oatuh_token")
+    @JsonProperty("oatuh_token")
+    @Column(name = "oatuh_token")
+    var token: String? = ""
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/v1/content")
-class ContentController {
+class ContentController : BaseController() {
 
     private val logger = LoggerFactory.getLogger(ContentController::class.java)
 
