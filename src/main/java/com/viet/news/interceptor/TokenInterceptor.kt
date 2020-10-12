@@ -1,6 +1,5 @@
 package com.viet.news.interceptor
 
-import cn.magicwindow.score.common.util.TokenUtils.ERR_CODE_TOKEN_INVALID
 import com.alibaba.fastjson.JSONObject
 import com.viet.news.common.ResponseContent
 import com.viet.news.entity.user.JwtInfoVo
@@ -8,7 +7,6 @@ import com.viet.news.entity.user.TokenInfo
 import com.viet.news.service.JwtService
 import com.viet.news.service.LoginService
 import com.viet.news.utils.TokenInfoHolder
-import jdk.nashorn.internal.runtime.regexp.joni.Config.log
 import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.BeanUtils
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,11 +1,7 @@
 package com.viet.news.config
 
-import cn.magicwindow.score.common.filter.TokenFilter
 import com.viet.news.interceptor.CorsInterceptor
 import com.viet.news.interceptor.TokenInterceptor
-import io.grpc.ManagedChannel
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.servlet.FilterRegistrationBean
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry

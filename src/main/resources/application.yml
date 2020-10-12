@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/viet_news?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&&useSSL=false
+    url: jdbc:mysql://localhost:3306/viet_news?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
     username: root
-    password: luxiao0314
+    password: d3203088
 
   jpa:
     hibernate:
