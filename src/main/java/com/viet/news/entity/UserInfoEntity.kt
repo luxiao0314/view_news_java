@@ -16,7 +16,7 @@ class UserInfoEntity :BaseEntity() {
     @JSONField(name = "zone_code")
     @JsonProperty("zone_code")
     @Column(name = "zone_code")
-    var zoneCode: Int = 0
+    var zoneCode: Int? = 0
 
     @JSONField(name = "invite_code")
     @JsonProperty("invite_code")
@@ -26,27 +26,27 @@ class UserInfoEntity :BaseEntity() {
     @JSONField(name = "follow_flag")
     @JsonProperty("follow_flag")
     @Column(name = "follow_flag")
-    var followFlag: Boolean = false
+    var followFlag: Boolean? = false
 
     @JSONField(name = "self_flag")
     @JsonProperty("self_flag")
     @Column(name = "self_flag")
-    var selfFlag: Boolean = false
+    var selfFlag: Boolean? = false
 
     @JSONField(name = "is_bind")
     @JsonProperty("is_bind")
     @Column(name = "is_bind")
-    var isBind: Boolean = false
+    var isBind: Boolean? = false
 
     @JSONField(name = "is_set_password")
     @JsonProperty("is_set_password")
     @Column(name = "is_set_password")
-    var isSetPassword: Boolean = false
+    var isSetPassword: Boolean? = false
 
     @JSONField(name = "fans_count")
     @JsonProperty("fans_count")
     @Column(name = "fans_count")
-    var fansCount: Int = 0
+    var fansCount: Int? = 0
 
     @JSONField(name = "user_id")
     @JsonProperty("user_id")
@@ -61,7 +61,7 @@ class UserInfoEntity :BaseEntity() {
     @JSONField(name = "follow_count")
     @JsonProperty("follow_count")
     @Column(name = "follow_count")
-    var followCount: Int = 0
+    var followCount: Int? = 0
 
     @JSONField(name = "nick_name")
     @JsonProperty("nick_name")
