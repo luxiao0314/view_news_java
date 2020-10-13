@@ -37,23 +37,23 @@ open class TokenInterceptor : HandlerInterceptorAdapter() {
 
     @Throws(IOException::class)
     override fun preHandle(request: HttpServletRequest?, response: HttpServletResponse?, handler: Any?): Boolean {
-        request?.let { if (it.requestURI.contains("/v1/login")) return true }
-        //clear tokenInfo
-        TokenInfoHolder.clearTokenInfo()
-        try {
-            //使用user_token
-            val authorization = request?.getHeader(TOKEN_ORG_HEADER)
-            if (StringUtils.isNotBlank(authorization)) {
-                setTokenInfo(authorization)
-                return true
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        val genericResponse = ResponseContent.buildFail(ERR_CODE_TOKEN_INVALID, "token is invalid")
-        response?.outputStream?.write(JSONObject.toJSONString(genericResponse).toByteArray())
-        return false
+//        request?.let { if (it.requestURI.contains("/v1/login")) return true }
+//        //clear tokenInfo
+//        TokenInfoHolder.clearTokenInfo()
+//        try {
+//            //使用user_token
+//            val authorization = request?.getHeader(TOKEN_ORG_HEADER)
+//            if (StringUtils.isNotBlank(authorization)) {
+//                setTokenInfo(authorization)
+//                return true
+//            }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//
+//        val genericResponse = ResponseContent.buildFail(ERR_CODE_TOKEN_INVALID, "token is invalid")
+//        response?.outputStream?.write(JSONObject.toJSONString(genericResponse).toByteArray())
+        return true
     }
 
     @Throws(UnsupportedEncodingException::class)
